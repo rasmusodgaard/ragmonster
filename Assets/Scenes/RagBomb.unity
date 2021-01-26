@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 52287297}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Body_Front
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,8 +331,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!233 &124324251
-HingeJoint2D:
+--- !u!254 &124324251
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -341,20 +341,15 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 743707387}
+  m_ConnectedRigidBody: {fileID: 1635577191}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.51909983, y: -0.00000062584877}
-  m_ConnectedAnchor: {x: 0, y: -0.5}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -5
-    m_UpperAngle: 5
+  m_MaxForce: 10000
+  m_MaxTorque: 20
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 1.0191, y: -0.000000044546272}
+  m_AngularOffset: -1.5707964
 --- !u!61 &124324252
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -439,7 +434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124324249}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.0191, z: 0}
+  m_LocalPosition: {x: -0.5, y: -1.0191, z: 0}
   m_LocalScale: {x: 1, y: 0.20000002, z: 1}
   m_Children: []
   m_Father: {fileID: 379309237}
@@ -500,11 +495,11 @@ RelativeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_MaxForce: 10000
-  m_MaxTorque: 500
+  m_MaxTorque: 20
   m_CorrectionScale: 0.3
   m_AutoConfigureOffset: 0
   m_LinearOffset: {x: 1, y: 0}
-  m_AngularOffset: -1.5707964
+  m_AngularOffset: 0
 --- !u!61 &214956026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -751,15 +746,15 @@ RelativeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 1379308210}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_MaxForce: 10000
-  m_MaxTorque: 10000
+  m_MaxTorque: 10
   m_CorrectionScale: 0.3
-  m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: 1.9099998, y: -2.5}
-  m_AngularOffset: -1.5707964
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &336564229
 Rigidbody2D:
   serializedVersion: 4
@@ -872,7 +867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &338201774
 Transform:
   m_ObjectHideFlags: 0
@@ -930,8 +925,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!233 &366220990
-HingeJoint2D:
+--- !u!254 &366220990
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -940,20 +935,15 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 743707387}
+  m_ConnectedRigidBody: {fileID: 788324273}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.51909983, y: -0.00000062584877}
-  m_ConnectedAnchor: {x: 0, y: -0.5}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -5
-    m_UpperAngle: 5
+  m_MaxForce: 10000
+  m_MaxTorque: 20
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 1.0191, y: -0.000000044546272}
+  m_AngularOffset: -1.5707964
 --- !u!61 &366220991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1038,7 +1028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366220988}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.0191, z: 0}
+  m_LocalPosition: {x: -1, y: -1.0191, z: 0}
   m_LocalScale: {x: 1, y: 0.20000002, z: 1}
   m_Children: []
   m_Father: {fileID: 953735323}
@@ -1053,6 +1043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375222098}
+  - component: {fileID: 375222099}
   m_Layer: 0
   m_Name: RagMonster
   m_TagString: Untagged
@@ -1076,6 +1067,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375222099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375222097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1159a0788a416e4428862699ab4af045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 2
 --- !u!1 &379309236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &379309237
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,7 +1246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &534056367
 Transform:
   m_ObjectHideFlags: 0
@@ -1287,14 +1291,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712421798}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.91, z: 0}
+  m_LocalPosition: {x: -2, y: -1.91, z: 0}
   m_LocalScale: {x: 0.6999999, y: 0.10000001, z: 1}
   m_Children: []
   m_Father: {fileID: 835020542}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!233 &712421800
-HingeJoint2D:
+--- !u!254 &712421800
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1306,17 +1310,12 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2051727494}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.5584285, y: -0.000004243314}
-  m_ConnectedAnchor: {x: -0.49999997, y: -0.0000009295642}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -10
-    m_UpperAngle: 10
+  m_MaxForce: 10000
+  m_MaxTorque: 10
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &712421801
 Rigidbody2D:
   serializedVersion: 4
@@ -1471,10 +1470,10 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.41666666, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 100
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!60 &737013049
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1618,10 +1617,10 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.25641024, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 100
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!50 &743707387
 Rigidbody2D:
   serializedVersion: 4
@@ -1750,14 +1749,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754881860}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.91, z: 0}
+  m_LocalPosition: {x: -1, y: -1.91, z: 0}
   m_LocalScale: {x: 0.6999999, y: 0.10000001, z: 1}
   m_Children: []
   m_Father: {fileID: 953735323}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!233 &754881862
-HingeJoint2D:
+--- !u!254 &754881862
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1769,17 +1768,12 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 366220989}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.5584285, y: -0.000004243314}
-  m_ConnectedAnchor: {x: -0.49999997, y: -0.0000009295642}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -10
-    m_UpperAngle: 10
+  m_MaxForce: 10000
+  m_MaxTorque: 10
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &754881863
 Rigidbody2D:
   serializedVersion: 4
@@ -1927,10 +1921,10 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.36764705, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 100
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!50 &788324273
 Rigidbody2D:
   serializedVersion: 4
@@ -2046,7 +2040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &835020542
 Transform:
   m_ObjectHideFlags: 0
@@ -2091,14 +2085,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943048688}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.91, z: 0}
+  m_LocalPosition: {x: -0.5, y: -1.91, z: 0}
   m_LocalScale: {x: 0.6999999, y: 0.10000001, z: 1}
   m_Children: []
   m_Father: {fileID: 379309237}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!233 &943048690
-HingeJoint2D:
+--- !u!254 &943048690
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2110,17 +2104,12 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 124324250}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.5584285, y: -0.000004243314}
-  m_ConnectedAnchor: {x: -0.49999997, y: -0.0000009295642}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -10
-    m_UpperAngle: 10
+  m_MaxForce: 10000
+  m_MaxTorque: 10
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &943048691
 Rigidbody2D:
   serializedVersion: 4
@@ -2233,7 +2222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &953735323
 Transform:
   m_ObjectHideFlags: 0
@@ -2402,8 +2391,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!233 &1153952473
-HingeJoint2D:
+--- !u!254 &1153952473
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2412,20 +2401,15 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 743707387}
+  m_ConnectedRigidBody: {fileID: 737013047}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.51909983, y: -0.00000062584877}
-  m_ConnectedAnchor: {x: 0, y: -0.5}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -5
-    m_UpperAngle: 5
+  m_MaxForce: 10000
+  m_MaxTorque: 20
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 1.0191, y: -0.000000044546272}
+  m_AngularOffset: -1.5707964
 --- !u!61 &1153952474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2510,7 +2494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153952471}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.0191, z: 0}
+  m_LocalPosition: {x: -1.5, y: -1.0191, z: 0}
   m_LocalScale: {x: 1, y: 0.20000002, z: 1}
   m_Children: []
   m_Father: {fileID: 1978794858}
@@ -2686,10 +2670,10 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.45454544, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 100
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!60 &1326378123
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2834,14 +2818,14 @@ RelativeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 743707387}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_MaxForce: 10000
-  m_MaxTorque: 10000
+  m_MaxTorque: 20
   m_CorrectionScale: 0.3
-  m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: 1.0190998, y: -2.5}
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 1.0191, y: -0.000000044546272}
   m_AngularOffset: -1.5707964
 --- !u!61 &1379308212
 BoxCollider2D:
@@ -3102,10 +3086,10 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.5, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 100
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!60 &1635577193
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3324,7 +3308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1978794858
 Transform:
   m_ObjectHideFlags: 0
@@ -3369,14 +3353,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019562010}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.91, z: 0}
+  m_LocalPosition: {x: -1.5, y: -1.91, z: 0}
   m_LocalScale: {x: 0.6999999, y: 0.10000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1978794858}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!233 &2019562012
-HingeJoint2D:
+--- !u!254 &2019562012
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3388,17 +3372,12 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 1153952472}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.5584285, y: -0.000004243314}
-  m_ConnectedAnchor: {x: -0.49999997, y: -0.0000009295642}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -10
-    m_UpperAngle: 10
+  m_MaxForce: 10000
+  m_MaxTorque: 10
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &2019562013
 Rigidbody2D:
   serializedVersion: 4
@@ -3515,7 +3494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2026533924
 Transform:
   m_ObjectHideFlags: 0
@@ -3540,15 +3519,15 @@ RelativeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 214956024}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_MaxForce: 10000
-  m_MaxTorque: 10000
+  m_MaxTorque: 10
   m_CorrectionScale: 0.3
   m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: 1.91, y: -0.00000008348875}
-  m_AngularOffset: -1.5707964
+  m_LinearOffset: {x: 0.8909, y: -0.000000038942478}
+  m_AngularOffset: 0
 --- !u!50 &2026533926
 Rigidbody2D:
   serializedVersion: 4
@@ -3687,8 +3666,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!233 &2051727495
-HingeJoint2D:
+--- !u!254 &2051727495
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3697,20 +3676,15 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 743707387}
+  m_ConnectedRigidBody: {fileID: 1326378121}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.51909983, y: -0.00000062584877}
-  m_ConnectedAnchor: {x: 0, y: -0.5}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -5
-    m_UpperAngle: 5
+  m_MaxForce: 10000
+  m_MaxTorque: 20
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 1.0191, y: -0.000000044546272}
+  m_AngularOffset: -1.5707964
 --- !u!61 &2051727496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3795,7 +3769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051727493}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: -1.0191, z: 0}
+  m_LocalPosition: {x: -2, y: -1.0191, z: 0}
   m_LocalScale: {x: 1, y: 0.20000002, z: 1}
   m_Children: []
   m_Father: {fileID: 835020542}
