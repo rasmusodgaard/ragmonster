@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(MonsterController))]
+//[CustomEditor(typeof(MonsterController))]
 public class MonsterController_Editor : Editor
 {
 

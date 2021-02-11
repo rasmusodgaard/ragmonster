@@ -6,17 +6,24 @@ using System;
 
 public class MonsterController : MonoBehaviour
 {
-    private Rigidbody2D rb_front;
-    private float inputHorizontal;
-    private float inputVertical;
-
+    [Header("General controls")]
     public float force = 1;
+
+    [Header("Body")]
+
+    [OnValueChanged("ValueAdjustment")]
+    public float bodySpringTension = 5;
+
+    [Header("Legs")]
 
     [OnValueChanged("ValueAdjustment")]
     public float legTorque = 20;
 
-    [OnValueChanged("ValueAdjustment")]
-    public float bodySpringTension = 5;
+
+    //Movement related
+    private Rigidbody2D rb_front;
+    private float inputHorizontal;
+    private float inputVertical;
 
     //Joints
     private List<Joint2D> allJoints = new List<Joint2D>();
@@ -68,6 +75,7 @@ public class MonsterController : MonoBehaviour
 
     private void ValueAdjustment()
     {
+        print("ValueAdjustment");
         foreach(var joint in upperLegJoints)
         {
             joint.maxTorque = legTorque;
