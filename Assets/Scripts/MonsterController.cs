@@ -14,11 +14,30 @@ public class MonsterController : MonoBehaviour
     [OnValueChanged("ValueAdjustment")]
     public float bodySpringTension = 5;
 
+    [OnValueChanged("ValueAdjustment"), Range(0, 1)]
+    public float bodyDampingRatio = 0.1f;
+
     [Header("Legs")]
 
     [OnValueChanged("ValueAdjustment")]
-    public float legTorque = 20;
+    public float legMaxTorque = 20;
 
+    [OnValueChanged("ValueAdjustment")]
+    public float legMaxForce = 20;
+
+    [OnValueChanged("ValueAdjustment"), Range(0, 1)]
+    public float legCorrectionScale = 0.3f;
+
+    [Header("Head")]
+
+    [OnValueChanged("ValueAdjustment")]
+    public float neckMaxTorque = 20;
+
+    [OnValueChanged("ValueAdjustment")]
+    public float neckMaxForce = 20;
+
+    [OnValueChanged("ValueAdjustment"), Range(0, 1)]
+    public float neckCorrectionScale = 20;
 
     //Movement related
     private Rigidbody2D rb_front;
@@ -28,7 +47,7 @@ public class MonsterController : MonoBehaviour
     //Joints
     private List<Joint2D> allJoints = new List<Joint2D>();
     private SpringJoint2D[] bodyJoints;
-    private List<RelativeJoint2D> upperLegJoints, lowerLegJoints;
+    private List<RelativeJoint2D> upperLegJoints, lowerLegJoints, neckJoints;
 
     private HingeJoint2D[] ragdollJoints;
 
@@ -42,11 +61,43 @@ public class MonsterController : MonoBehaviour
     {
         upperLegJoints = new List<RelativeJoint2D>();
         lowerLegJoints = new List<RelativeJoint2D>();
+        neckJoints = new List<RelativeJoint2D>();
 
         ragdollJoints = GetComponentsInChildren<HingeJoint2D>(true);
         bodyJoints = GetComponentsInChildren<SpringJoint2D>();
-        GetLegJoints();
+        SortBodyParts();
         allJoints = AssembleAllJoints();
+
+        ValueAdjustment();
+    }
+
+    private void ValueAdjustment()
+    {
+        print("ValueAdjustment");
+        foreach(var joint in upperLegJoints)
+        {
+            joint.maxTorque = legMaxTorque;
+            joint.maxForce = legMaxForce;
+            joint.correctionScale = legCorrectionScale;
+        }
+        foreach(var joint in lowerLegJoints)
+        {
+            joint.maxTorque = legMaxTorque;
+            joint.maxForce = legMaxForce;
+            joint.correctionScale = legCorrectionScale;
+        }
+        foreach(var joint in bodyJoints)
+        {
+            joint.frequency = bodySpringTension;
+            joint.dampingRatio = bodyDampingRatio;
+        }
+        foreach(var joint in neckJoints)
+        {
+            joint.maxTorque = neckMaxTorque;
+            joint.maxForce = neckMaxForce;
+            joint.correctionScale = neckCorrectionScale;
+
+        }
     }
 
     private List<Joint2D> AssembleAllJoints()
@@ -69,28 +120,17 @@ public class MonsterController : MonoBehaviour
         {
             output.Add(joint);
         }
+        foreach(var joint in neckJoints)
+        {
+            output.Add(joint);
+        }
 
         return output;
     }
 
-    private void ValueAdjustment()
-    {
-        print("ValueAdjustment");
-        foreach(var joint in upperLegJoints)
-        {
-            joint.maxTorque = legTorque;
-        }
-        foreach(var joint in lowerLegJoints)
-        {
-            joint.maxTorque = legTorque;
-        }
-        foreach(var joint in bodyJoints)
-        {
-            joint.frequency = bodySpringTension;
-        }
-    }
 
-    private void GetLegJoints()
+
+    private void SortBodyParts()
     {
         RelativeJoint2D[] relativeJoints = GetComponentsInChildren<RelativeJoint2D>();
         foreach(var joint in relativeJoints)
@@ -103,14 +143,14 @@ public class MonsterController : MonoBehaviour
             {
                 lowerLegJoints.Add(joint);
             }
+            else if(joint.name == "neckJoint")
+            {
+                neckJoints.Add(joint);
+            }
         }
     }
 
-    public void CountHingejoints()
-    {
-        print(GetComponentsInChildren<HingeJoint2D>().Length + " hingejoints");
-    }
-
+    [ContextMenu("Attach hinge joints")]
     public void TransferReferencesBetweenJoints()
     {
         Init();
@@ -153,11 +193,11 @@ public class MonsterController : MonoBehaviour
     {
         if(!Mathf.Approximately(inputHorizontal, 0.0f))
         {
-            rb_front.AddForce((Vector2.one * inputHorizontal) * force, ForceMode2D.Impulse);
+            rb_front.AddForce((Vector2.right * inputHorizontal) * force, ForceMode2D.Impulse);
         }
         if(!Mathf.Approximately(inputVertical, 0.0f))
         {
-            rb_front.AddForce((Vector2.one * inputHorizontal) * force, ForceMode2D.Impulse);
+            rb_front.AddForce((Vector2.up * inputVertical) * force, ForceMode2D.Impulse);
         }
     }
 }
