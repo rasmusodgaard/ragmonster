@@ -10,7 +10,6 @@ public class MonsterController : MonoBehaviour
     public float forceVertical = 1;
     public float forceHorizontal = 1;
 
-
     [Header("Body")]
 
     [OnValueChanged("ValueAdjustment")]
